@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -35,9 +36,16 @@ export default function Navbar() {
       }`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
-        <h1 className="text-2xl font-black tracking-widest text-white">
-          RODRIGO<span className="text-green-400">DIAZ</span>
-        </h1>
+        <div className="flex items-center">
+          <Image
+            src="/logo.png"
+            alt="Rodrigo Diaz"
+            width={180}
+            height={60}
+            className="h-auto w-auto"
+            priority
+          />
+        </div>
 
         <div className="hidden gap-8 md:flex">
           {links.map((link) => (
@@ -47,12 +55,12 @@ export default function Navbar() {
               className="group relative text-sm uppercase tracking-wider text-white"
             >
               {link}
-              <span className="absolute -bottom-2 left-0 h-[2px] w-0 bg-green-400 transition-all duration-300 group-hover:w-full" />
+              <span className="absolute -bottom-2 left-0 h-[2px] w-0 bg-[#CDAA54] transition-all duration-300 group-hover:w-full" />
             </a>
           ))}
         </div>
 
-        <button className="hidden rounded-full bg-green-500 px-5 py-3 font-semibold text-black transition hover:scale-105 md:block">
+        <button className="hidden rounded-full bg-[#CDAA54] px-5 py-3 font-semibold text-black transition hover:scale-105 md:block">
           Comenzar
         </button>
 

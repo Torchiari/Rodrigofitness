@@ -18,13 +18,13 @@ export default function Hero() {
         transition={{ duration: 1 }}
         className="relative z-10 max-w-4xl px-6 text-center"
       >
-        <span className="rounded-full border border-green-400 px-4 py-2 text-sm uppercase tracking-widest text-green-400">
+        <span className="rounded-full border border-[#CDAA54] px-4 py-2 text-sm uppercase tracking-widest text-[#CDAA54]">
           Entrenador Certificado
         </span>
 
         <h1 className="mt-8 text-5xl font-black text-white md:text-7xl">
           Transforma Tu
-          <span className="block text-green-400">Mejor Versión</span>
+          <span className="block text-[#CDAA54]">Mejor Versión</span>
         </h1>
 
         <p className="mx-auto mt-6 max-w-2xl text-lg text-gray-300">
@@ -33,7 +33,7 @@ export default function Hero() {
         </p>
 
         <div className="mt-10 flex flex-col justify-center gap-4 md:flex-row">
-          <button className="rounded-full bg-green-500 px-8 py-4 font-bold text-black transition hover:scale-105">
+          <button className="rounded-full bg-[#CDAA54] px-8 py-4 font-bold text-black transition hover:scale-105">
             Comenzar Ahora
           </button>
 
