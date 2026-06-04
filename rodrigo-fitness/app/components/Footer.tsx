@@ -1,44 +1,51 @@
-import { AtSign, Mail, Phone } from "lucide-react";
+"use client";
+
+import Image from "next/image";
 
 export default function Footer() {
   return (
     <footer className="border-t border-white/10 bg-[#030712]">
-      <div className="mx-auto flex max-w-7xl flex-col gap-10 px-6 py-16 md:flex-row md:justify-between">
+      <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-10 px-6 py-12 md:flex-row">
         <div>
-          <h2 className="text-3xl font-black text-white">
-            RODRIGO<span className="text-green-400">DIAZ</span>
-          </h2>
-
-          <p className="mt-4 max-w-sm text-gray-400">
-            Entrenamiento personalizado, nutrición y seguimiento profesional
-            para alcanzar tu mejor versión.
-          </p>
+          <Image
+            src="/logo11.png"
+            alt="Rodrigo Diaz"
+            width={180}
+            height={60}
+            className="h-auto w-auto"
+          />
         </div>
 
-        <div>
-          <h3 className="mb-4 font-bold text-white">Contacto</h3>
+        <div className="max-w-lg text-center md:text-right">
+          <p className="text-lg text-gray-300">
+            Entrenamiento personalizado, seguimiento online y hábitos saludables
+            para ayudarte a alcanzar tu mejor versión.
+          </p>
 
-          <div className="space-y-3 text-gray-400">
-            <p className="flex items-center gap-2">
-              <Phone size={18} />
-              +54 9 2983 000000
-            </p>
-
-            <p className="flex items-center gap-2">
-              <Mail size={18} />
-              contacto@rodrigodiaz.com
-            </p>
-
-            <p className="flex items-center gap-2">
-              <AtSign size={18} />
-              @rodrigodiaz
-            </p>
-          </div>
+          <p className="mt-3 text-sm uppercase tracking-[3px] text-[#4BA3FF]">
+            Personal Trainer • Entrenador Funcional
+          </p>
         </div>
       </div>
 
-      <div className="border-t border-white/10 py-6 text-center text-sm text-gray-500">
-        © 2026 RodrigoDiaz. Todos los derechos reservados.
+      <div className="border-t border-white/10 py-6">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-6 text-center md:flex-row">
+          <p className="text-sm text-gray-500">
+            © 2026 Rodrigo Díaz. Todos los derechos reservados.
+          </p>
+
+          <p className="text-sm text-gray-500">
+            Diseñado y desarrollado por{" "}
+            <a
+              href="https://daneltorchiari.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#4BA3FF] transition hover:text-white"
+            >
+              Danel Torchiari
+            </a>
+          </p>
+        </div>
       </div>
     </footer>
   );

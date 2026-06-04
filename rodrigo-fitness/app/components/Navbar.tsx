@@ -19,12 +19,11 @@ export default function Navbar() {
   }, []);
 
   const links = [
-    "Inicio",
-    "Sobre Mi",
-    "Servicios",
-    "Cursos",
-    "Resultados",
-    "Contacto",
+    { name: "Inicio", href: "#inicio" },
+    { name: "Sobre Mí", href: "#sobre-mi" },
+    { name: "Servicios", href: "#servicios" },
+    { name: "Certificaciones", href: "#certificaciones" },
+    { name: "Contacto", href: "#contacto" },
   ];
 
   return (
@@ -35,10 +34,10 @@ export default function Navbar() {
           : "bg-transparent"
       }`}
     >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
+      <nav className="mx-auto grid max-w-7xl grid-cols-[auto_1fr_auto] items-center px-6 py-5">
         <div className="flex items-center">
           <Image
-            src="/logo.png"
+            src="/logo11.png"
             alt="Rodrigo Diaz"
             width={180}
             height={60}
@@ -47,22 +46,21 @@ export default function Navbar() {
           />
         </div>
 
-        <div className="hidden gap-8 md:flex">
-          {links.map((link) => (
-            <a
-              key={link}
-              href="#"
-              className="group relative text-sm uppercase tracking-wider text-white"
-            >
-              {link}
-              <span className="absolute -bottom-2 left-0 h-[2px] w-0 bg-[#CDAA54] transition-all duration-300 group-hover:w-full" />
-            </a>
-          ))}
-        </div>
+        <div className="hidden justify-center md:flex">
+          <div className="flex gap-8">
+            {links.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                className="group relative text-sm uppercase tracking-wider text-white transition-colors hover:text-[#4BA3FF]"
+              >
+                {link.name}
 
-        <button className="hidden rounded-full bg-[#CDAA54] px-5 py-3 font-semibold text-black transition hover:scale-105 md:block">
-          Comenzar
-        </button>
+                <span className="absolute -bottom-2 left-0 h-[2px] w-0 bg-[#1164BC] transition-all duration-300 group-hover:w-full" />
+              </a>
+            ))}
+          </div>
+        </div>
 
         <button onClick={() => setOpen(!open)} className="text-white md:hidden">
           {open ? <X /> : <Menu />}
