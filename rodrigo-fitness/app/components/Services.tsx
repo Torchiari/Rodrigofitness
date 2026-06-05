@@ -136,7 +136,7 @@ export default function Services() {
           whileInView="visible"
           viewport={{ once: true }}
           className="
-            flex flex-col
+            flex flex-col gap-2
             sm:grid sm:grid-cols-2 sm:gap-6
             lg:grid-cols-4
             md:gap-6
@@ -145,7 +145,6 @@ export default function Services() {
           {services.map((service, index) => {
             const Icon = service.icon;
             const isExpanded = expandedIndex === index;
-            const isLast = index === services.length - 1;
 
             return (
               <motion.div
@@ -157,22 +156,13 @@ export default function Services() {
                   onClick={() => setExpandedIndex(isExpanded ? null : index)}
                   whileTap={{ scale: 0.98 }}
                   className={`
-                    relative w-full transition-all duration-300
-                    /* Mobile: no rounded corners between cards, only on first top and last bottom */
-                    ${index === 0 ? "rounded-t-2xl" : ""}
-                    ${isLast ? "rounded-b-2xl" : ""}
-                    /* On sm+ always fully rounded */
-                    sm:rounded-2xl
-                    border
+                    relative w-full rounded-2xl border transition-all duration-300
                     ${
                       isExpanded
                         ? "border-[#1164BC]/50 bg-gradient-to-br from-[#1164BC]/15 to-[#1164BC]/5 ring-2 ring-[#1164BC]/30"
                         : "border-white/10 bg-white/5 hover:border-[#1164BC]/30 hover:bg-white/[0.08]"
                     }
-                    /* On mobile, remove bottom border on non-last cards to avoid double borders */
-                    ${!isLast ? "max-sm:border-b-0" : ""}
                     backdrop-blur-xl p-4 md:p-6 text-left overflow-hidden
-                    /* Equal min-height on desktop so all cards are same size when collapsed */
                     sm:min-h-[260px] sm:flex sm:flex-col
                   `}
                 >
