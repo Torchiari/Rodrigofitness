@@ -135,7 +135,12 @@ export default function Services() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid gap-2 md:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 items-start"
+          className="
+  flex flex-col gap-2
+  sm:grid sm:grid-cols-2
+  lg:grid-cols-4
+  md:gap-6
+"
         >
           {services.map((service, index) => {
             const Icon = service.icon;
