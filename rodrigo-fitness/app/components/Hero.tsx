@@ -17,7 +17,7 @@ export default function Hero() {
         initial={{ opacity: 0, y: 70 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
-        className="relative z-10 max-w-4xl px-6 text-center pt-24 md:pt-0"
+        className="relative z-10 max-w-4xl px-6 text-center pt-20 pb-4 md:pt-0 md:pb-0"
       >
         <h1 className="font-heading mt-8 text-6xl leading-[0.9] tracking-wider text-white md:text-8xl">
           TRANSFORMÁ TU

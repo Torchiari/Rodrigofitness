@@ -135,7 +135,7 @@ export default function Services() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid gap-4 md:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
+          className="grid gap-3 md:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
         >
           {services.map((service, index) => {
             const Icon = service.icon;
@@ -152,13 +152,13 @@ export default function Services() {
                   whileTap={{ scale: 0.98 }}
                   className={`
   relative w-full rounded-2xl border transition-all duration-300
-  min-h-[230px] md:min-h-[320px]
+  min-h-[170px] md:min-h-[320px]
   ${
     isExpanded
       ? "border-[#1164BC]/50 bg-gradient-to-br from-[#1164BC]/15 to-[#1164BC]/5 ring-2 ring-[#1164BC]/30"
       : "border-white/10 bg-white/5 hover:border-[#1164BC]/30 hover:bg-white/[0.08]"
   }
-  backdrop-blur-xl p-4 md:p-6 text-left overflow-hidden
+  backdrop-blur-xl p-3 md:p-6 text-left overflow-hidden
 `}
                 >
                   {/* Shine effect */}
@@ -166,8 +166,8 @@ export default function Services() {
 
                   <div className="relative z-10">
                     {/* Icon */}
-                    <div className="mb-4 flex h-11 w-11 md:h-12 md:w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[#1164BC]/30 to-[#1164BC]/10 group-hover:from-[#1164BC]/40 group-hover:to-[#1164BC]/20 transition-all">
-                      <Icon size={22} className="text-[#4BA3FF]" />
+                    <div className="mb-2 flex h-9 w-9 md:h-12 md:w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[#1164BC]/30 to-[#1164BC]/10 group-hover:from-[#1164BC]/40 group-hover:to-[#1164BC]/20 transition-all">
+                      <Icon size={18} className="text-[#4BA3FF]" />
                     </div>
 
                     <h3 className="mb-1 text-lg md:text-xl font-bold text-white group-hover:text-[#4BA3FF] transition-colors">
@@ -178,12 +178,12 @@ export default function Services() {
                       {service.subtitle}
                     </p>
 
-                    <p className="text-sm leading-relaxed text-gray-300 mb-4">
+                    <p className="text-xs md:text-sm leading-relaxed text-gray-300 mb-2">
                       {service.shortDesc}
                     </p>
 
                     {/* Expand indicator */}
-                    <div className="flex items-center justify-between mt-4 pt-4 border-t border-white/10">
+                    <div className="flex items-center justify-between mt-2 pt-2 md:mt-4 md:pt-4 border-t border-white/10">
                       <span className="text-xs uppercase tracking-widest text-gray-400 font-semibold">
                         {isExpanded ? "Menos detalles" : "Ver más"}
                       </span>
@@ -242,7 +242,7 @@ export default function Services() {
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
             <div className="flex gap-3">
-              <TrendingUp className="text-[#4BA3FF] flex-shrink-0" size={22} />
+              <TrendingUp className="text-[#4BA3FF] flex-shrink-0" size={18} />
               <div>
                 <p className="font-semibold text-white text-sm md:text-base">
                   Resultados Medibles
