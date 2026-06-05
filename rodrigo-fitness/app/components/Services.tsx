@@ -135,7 +135,7 @@ export default function Services() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid gap-2 md:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
+          className="grid gap-2 md:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 items-start"
         >
           {services.map((service, index) => {
             const Icon = service.icon;
@@ -145,7 +145,7 @@ export default function Services() {
               <motion.div
                 key={service.title}
                 variants={itemVariants}
-                className="group h-full"
+                className="group"
               >
                 <motion.button
                   onClick={() => setExpandedIndex(isExpanded ? null : index)}
