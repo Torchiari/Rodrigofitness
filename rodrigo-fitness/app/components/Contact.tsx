@@ -17,7 +17,7 @@ const contactChannels = [
     icon: FaInstagram,
     title: "Instagram",
     description: "Seguime y conocé más sobre mi trabajo",
-    link: "https://instagram.com/TU_USUARIO",
+    link: "https://www.instagram.com/diaz_rodri1",
     color: "#E4405F",
     bgColor: "#E4405F/10",
   },
@@ -25,7 +25,7 @@ const contactChannels = [
     icon: FaTiktok,
     title: "TikTok",
     description: "Tips, entrenamientos y contenido fitness",
-    link: "https://tiktok.com/@TU_USUARIO",
+    link: "https://tiktok.com/@diaz_rodri1",
     color: "#000000",
     bgColor: "#000000/10",
   },
@@ -33,7 +33,7 @@ const contactChannels = [
     icon: Mail,
     title: "Email",
     description: "Consultas comerciales y asesoramiento",
-    link: "mailto:correo@ejemplo.com",
+    link: "mailto:eldiaz1111@gmail.com",
     color: "#EA4335",
     bgColor: "#EA4335/10",
   },
@@ -197,9 +197,7 @@ export default function Contact() {
                 <p className="text-xs uppercase tracking-widest text-gray-400">
                   Email
                 </p>
-                <p className="text-white font-semibold">
-                  rodrigodiaz@gmail.com
-                </p>
+                <p className="text-white font-semibold">eldiaz1111@gmail.com</p>
               </div>
             </div>
 

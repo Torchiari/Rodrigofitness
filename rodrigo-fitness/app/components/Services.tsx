@@ -135,7 +135,7 @@ export default function Services() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid gap-3 md:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
+          className="grid gap-2 md:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
         >
           {services.map((service, index) => {
             const Icon = service.icon;
@@ -152,13 +152,12 @@ export default function Services() {
                   whileTap={{ scale: 0.98 }}
                   className={`
   relative w-full rounded-2xl border transition-all duration-300
-  min-h-[170px] md:min-h-[320px]
   ${
     isExpanded
       ? "border-[#1164BC]/50 bg-gradient-to-br from-[#1164BC]/15 to-[#1164BC]/5 ring-2 ring-[#1164BC]/30"
       : "border-white/10 bg-white/5 hover:border-[#1164BC]/30 hover:bg-white/[0.08]"
   }
-  backdrop-blur-xl p-3 md:p-6 text-left overflow-hidden
+  backdrop-blur-xl p-4 md:p-6 text-left overflow-hidden
 `}
                 >
                   {/* Shine effect */}
@@ -197,7 +196,7 @@ export default function Services() {
 
                     {/* Expanded content */}
                     <motion.div
-                      initial={{ opacity: 0, height: 0 }}
+                      initial={false}
                       animate={{
                         opacity: isExpanded ? 1 : 0,
                         height: isExpanded ? "auto" : 0,
