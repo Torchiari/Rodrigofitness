@@ -132,11 +132,7 @@ export default function Contact() {
 
                 <div className="relative z-10">
                   {/* Icon with gradient */}
-                  <motion.div
-                    whileHover={{ rotate: 360 }}
-                    transition={{ duration: 0.6 }}
-                    className="mb-4 flex justify-center"
-                  >
+                  <motion.div className="mb-4 flex justify-center">
                     <div
                       className={`flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-[#1164BC]/30 to-[#1164BC]/10 group-hover:from-[#1164BC]/40 group-hover:to-[#1164BC]/20 transition-all`}
                     >
