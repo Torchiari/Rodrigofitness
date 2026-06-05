@@ -9,7 +9,7 @@ const contactChannels = [
     icon: FaWhatsapp,
     title: "WhatsApp",
     description: "Consultas y asesoramiento personalizado",
-    link: "https://wa.me/549XXXXXXXXXX",
+    link: "https://wa.me/5492494381416",
     color: "#25D366",
     bgColor: "#25D366/10",
   },
@@ -185,7 +185,7 @@ export default function Contact() {
                 <p className="text-xs uppercase tracking-widest text-gray-400">
                   Teléfono
                 </p>
-                <p className="text-white font-semibold">+54 9 XXXXXXXXXX</p>
+                <p className="text-white font-semibold">+54 9 2494 381416</p>
               </div>
             </div>
 
@@ -197,7 +197,9 @@ export default function Contact() {
                 <p className="text-xs uppercase tracking-widest text-gray-400">
                   Email
                 </p>
-                <p className="text-white font-semibold">correo@ejemplo.com</p>
+                <p className="text-white font-semibold">
+                  rodrigodiaz@gmail.com
+                </p>
               </div>
             </div>
 
@@ -209,7 +211,9 @@ export default function Contact() {
                 <p className="text-xs uppercase tracking-widest text-gray-400">
                   Ubicación
                 </p>
-                <p className="text-white font-semibold">Tu Ciudad</p>
+                <p className="text-white font-semibold">
+                  Buenos Aires, Argentina
+                </p>
               </div>
             </div>
           </div>
@@ -237,7 +241,7 @@ export default function Contact() {
             los hábitos que siempre quisiste.
           </p>
           <motion.a
-            href="https://wa.me/549XXXXXXXXXX"
+            href="https://wa.me/5492494381416"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{

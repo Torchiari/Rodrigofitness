@@ -19,6 +19,11 @@
   }
 }
 
+/* Smooth scroll for all anchor navigation */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
@@ -31,4 +36,40 @@ body {
 
 .font-body {
   font-family: var(--font-inter);
+}
+
+/* Offset for fixed navbar when scrolling to sections */
+[id] {
+  scroll-margin-top: 80px;
+}
+
+/* Custom scrollbar for desktop */
+@media (min-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #030712;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #1164bc55;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #1164bc;
+  }
+}
+
+/* Mobile: prevent horizontal overflow */
+@media (max-width: 767px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  section {
+    overflow-x: hidden;
+  }
 }

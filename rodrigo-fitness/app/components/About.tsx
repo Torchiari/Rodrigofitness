@@ -10,16 +10,16 @@ const highlights = [
     title: "Certificado",
     description: "Personal Trainer & Entrenamiento Funcional",
   },
-  {
-    icon: Zap,
-    title: "Resultados",
-    description: "Transformaciones reales en 8-12 semanas",
-  },
-  {
-    icon: Users,
-    title: "+100 Clientes",
-    description: "Transformaciones exitosas comprobadas",
-  },
+  // {
+  //   icon: Zap,
+  //   title: "Resultados",
+  //   description: "Transformaciones reales en 8-12 semanas",
+  // },
+  // {
+  //   icon: Users,
+  //   title: "+100 Clientes",
+  //   description: "Transformaciones exitosas comprobadas",
+  // },
   {
     icon: CheckCircle2,
     title: "Integral",
@@ -58,14 +58,14 @@ export default function About() {
           />
 
           {/* Badge */}
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.3 }}
             className="absolute -bottom-6 -right-6 bg-[#1164BC] text-white px-6 py-3 rounded-full font-bold shadow-lg border-4 border-[#030712]"
           >
             +10 Años Exp.
-          </motion.div>
+          </motion.div> */}
         </motion.div>
 
         {/* Content Section */}

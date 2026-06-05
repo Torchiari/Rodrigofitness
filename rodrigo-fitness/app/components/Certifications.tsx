@@ -22,7 +22,7 @@ const certifications = [
       "Evaluación física",
       "Nutrición básica",
     ],
-    year: "2019",
+    year: "2023",
   },
   {
     icon: Dumbbell,
@@ -35,7 +35,7 @@ const certifications = [
       "Prevención de lesiones",
       "Rendimiento deportivo",
     ],
-    year: "2021",
+    year: "2023",
   },
   {
     icon: GraduationCap,
@@ -48,7 +48,7 @@ const certifications = [
       "Nutrición clínica",
       "Dietética deportiva",
     ],
-    year: "2024",
+    year: "2023",
   },
 ];
 
@@ -216,7 +216,7 @@ export default function Certifications() {
         </motion.div>
 
         {/* Education Timeline / Stats */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -255,7 +255,7 @@ export default function Certifications() {
               </p>
             </div>
           </div>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );
