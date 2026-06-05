@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import {
   Dumbbell,
@@ -136,15 +136,16 @@ export default function Services() {
           whileInView="visible"
           viewport={{ once: true }}
           className="
-  flex flex-col gap-2
-  sm:grid sm:grid-cols-2
-  lg:grid-cols-4
-  md:gap-6
-"
+            flex flex-col
+            sm:grid sm:grid-cols-2 sm:gap-6
+            lg:grid-cols-4
+            md:gap-6
+          "
         >
           {services.map((service, index) => {
             const Icon = service.icon;
             const isExpanded = expandedIndex === index;
+            const isLast = index === services.length - 1;
 
             return (
               <motion.div
@@ -156,19 +157,29 @@ export default function Services() {
                   onClick={() => setExpandedIndex(isExpanded ? null : index)}
                   whileTap={{ scale: 0.98 }}
                   className={`
-  relative w-full rounded-2xl border transition-all duration-300
-  ${
-    isExpanded
-      ? "border-[#1164BC]/50 bg-gradient-to-br from-[#1164BC]/15 to-[#1164BC]/5 ring-2 ring-[#1164BC]/30"
-      : "border-white/10 bg-white/5 hover:border-[#1164BC]/30 hover:bg-white/[0.08]"
-  }
-  backdrop-blur-xl p-4 md:p-6 text-left overflow-hidden
-`}
+                    relative w-full transition-all duration-300
+                    /* Mobile: no rounded corners between cards, only on first top and last bottom */
+                    ${index === 0 ? "rounded-t-2xl" : ""}
+                    ${isLast ? "rounded-b-2xl" : ""}
+                    /* On sm+ always fully rounded */
+                    sm:rounded-2xl
+                    border
+                    ${
+                      isExpanded
+                        ? "border-[#1164BC]/50 bg-gradient-to-br from-[#1164BC]/15 to-[#1164BC]/5 ring-2 ring-[#1164BC]/30"
+                        : "border-white/10 bg-white/5 hover:border-[#1164BC]/30 hover:bg-white/[0.08]"
+                    }
+                    /* On mobile, remove bottom border on non-last cards to avoid double borders */
+                    ${!isLast ? "max-sm:border-b-0" : ""}
+                    backdrop-blur-xl p-4 md:p-6 text-left overflow-hidden
+                    /* Equal min-height on desktop so all cards are same size when collapsed */
+                    sm:min-h-[260px] sm:flex sm:flex-col
+                  `}
                 >
                   {/* Shine effect */}
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-20 bg-gradient-to-r from-transparent via-white to-transparent group-hover:translate-x-full transition-all duration-500 pointer-events-none"></div>
 
-                  <div className="relative z-10">
+                  <div className="relative z-10 sm:flex sm:flex-col sm:flex-1">
                     {/* Icon */}
                     <div className="mb-2 flex h-9 w-9 md:h-12 md:w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[#1164BC]/30 to-[#1164BC]/10 group-hover:from-[#1164BC]/40 group-hover:to-[#1164BC]/20 transition-all">
                       <Icon size={18} className="text-[#4BA3FF]" />
@@ -182,12 +193,12 @@ export default function Services() {
                       {service.subtitle}
                     </p>
 
-                    <p className="text-xs md:text-sm leading-relaxed text-gray-300 mb-2">
+                    <p className="text-xs md:text-sm leading-relaxed text-gray-300 mb-2 sm:flex-1">
                       {service.shortDesc}
                     </p>
 
                     {/* Expand indicator */}
-                    <div className="flex items-center justify-between mt-2 pt-2 md:mt-4 md:pt-4 border-t border-white/10">
+                    <div className="flex items-center justify-between mt-2 pt-2 md:mt-4 md:pt-4 border-t border-white/10 sm:mt-auto">
                       <span className="text-xs uppercase tracking-widest text-gray-400 font-semibold">
                         {isExpanded ? "Menos detalles" : "Ver más"}
                       </span>
@@ -200,33 +211,39 @@ export default function Services() {
                     </div>
 
                     {/* Expanded content */}
-                    <motion.div
-                      initial={false}
-                      animate={{
-                        opacity: isExpanded ? 1 : 0,
-                        height: isExpanded ? "auto" : 0,
-                      }}
-                      transition={{ duration: 0.3 }}
-                      className="overflow-hidden"
-                    >
-                      <div className="pt-4 mt-4 border-t border-[#1164BC]/20">
-                        <p className="text-sm text-gray-300 mb-4">
-                          {service.fullDescription}
-                        </p>
-                        <ul className="space-y-2">
-                          {service.highlights.map((highlight, idx) => (
-                            <li key={idx} className="flex items-start gap-2">
-                              <span className="text-[#4BA3FF] font-bold mt-0.5">
-                                ✓
-                              </span>
-                              <span className="text-sm text-gray-300">
-                                {highlight}
-                              </span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </motion.div>
+                    <AnimatePresence initial={false}>
+                      {isExpanded && (
+                        <motion.div
+                          key="expanded"
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: "auto" }}
+                          exit={{ opacity: 0, height: 0 }}
+                          transition={{ duration: 0.3, ease: "easeInOut" }}
+                          className="overflow-hidden"
+                        >
+                          <div className="pt-4 mt-4 border-t border-[#1164BC]/20">
+                            <p className="text-sm text-gray-300 mb-4">
+                              {service.fullDescription}
+                            </p>
+                            <ul className="space-y-2">
+                              {service.highlights.map((highlight, idx) => (
+                                <li
+                                  key={idx}
+                                  className="flex items-start gap-2"
+                                >
+                                  <span className="text-[#4BA3FF] font-bold mt-0.5">
+                                    ✓
+                                  </span>
+                                  <span className="text-sm text-gray-300">
+                                    {highlight}
+                                  </span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
                   </div>
                 </motion.button>
               </motion.div>
