@@ -56,7 +56,7 @@ export default function Certifications() {
   return (
     <section
       id="certificaciones"
-      className="relative bg-[#030712] py-32 overflow-hidden"
+      className="relative bg-[#030712] pt-20 pb-0 md:pt-32 md:pb-32 overflow-hidden"
     >
       {/* Background effects */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -214,48 +214,6 @@ export default function Certifications() {
             </motion.div>
           </div>
         </motion.div>
-
-        {/* Education Timeline / Stats */}
-        {/* <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="rounded-2xl border border-[#1164BC]/20 bg-gradient-to-r from-[#1164BC]/10 to-transparent p-8 backdrop-blur-md"
-        >
-          <h3 className="text-2xl font-bold text-white mb-6">
-            Compromiso con la Excelencia
-          </h3>
-          <div className="grid md:grid-cols-4 gap-6">
-            <div className="flex flex-col items-center gap-2">
-              <Zap className="text-[#4BA3FF]" size={32} />
-              <p className="text-2xl font-bold text-white">+10</p>
-              <p className="text-sm text-gray-400 text-center">
-                Años de Experiencia
-              </p>
-            </div>
-            <div className="flex flex-col items-center gap-2">
-              <Award className="text-[#4BA3FF]" size={32} />
-              <p className="text-2xl font-bold text-white">3+</p>
-              <p className="text-sm text-gray-400 text-center">
-                Certificaciones Activas
-              </p>
-            </div>
-            <div className="flex flex-col items-center gap-2">
-              <GraduationCap className="text-[#4BA3FF]" size={32} />
-              <p className="text-2xl font-bold text-white">∞</p>
-              <p className="text-sm text-gray-400 text-center">
-                Aprendizaje Continuo
-              </p>
-            </div>
-            <div className="flex flex-col items-center gap-2">
-              <Dumbbell className="text-[#4BA3FF]" size={32} />
-              <p className="text-2xl font-bold text-white">100%</p>
-              <p className="text-sm text-gray-400 text-center">
-                Dedicación Total
-              </p>
-            </div>
-          </div>
-        </motion.div> */}
       </div>
     </section>
   );

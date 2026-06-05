@@ -151,14 +151,15 @@ export default function Services() {
                   onClick={() => setExpandedIndex(isExpanded ? null : index)}
                   whileTap={{ scale: 0.98 }}
                   className={`
-                    relative w-full h-full rounded-2xl border transition-all duration-300
-                    ${
-                      isExpanded
-                        ? "border-[#1164BC]/50 bg-gradient-to-br from-[#1164BC]/15 to-[#1164BC]/5 ring-2 ring-[#1164BC]/30"
-                        : "border-white/10 bg-white/5 hover:border-[#1164BC]/30 hover:bg-white/[0.08]"
-                    }
-                    backdrop-blur-xl p-5 md:p-6 text-left overflow-hidden
-                  `}
+  relative w-full rounded-2xl border transition-all duration-300
+  min-h-[230px] md:min-h-[320px]
+  ${
+    isExpanded
+      ? "border-[#1164BC]/50 bg-gradient-to-br from-[#1164BC]/15 to-[#1164BC]/5 ring-2 ring-[#1164BC]/30"
+      : "border-white/10 bg-white/5 hover:border-[#1164BC]/30 hover:bg-white/[0.08]"
+  }
+  backdrop-blur-xl p-4 md:p-6 text-left overflow-hidden
+`}
                 >
                   {/* Shine effect */}
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-20 bg-gradient-to-r from-transparent via-white to-transparent group-hover:translate-x-full transition-all duration-500 pointer-events-none"></div>

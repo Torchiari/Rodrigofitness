@@ -71,7 +71,7 @@ export default function Navbar() {
           : "bg-transparent"
       }`}
     >
-      <nav className="mx-auto grid max-w-7xl grid-cols-[auto_1fr_auto] items-center px-4 py-4 md:px-6 md:py-5">
+      <nav className="mx-auto flex items-center justify-between max-w-7xl px-4 py-4 md:grid md:grid-cols-[auto_1fr_auto] md:px-6 md:py-5">
         <div className="flex items-center">
           <Image
             src="/logo11.png"
@@ -103,7 +103,7 @@ export default function Navbar() {
         {/* Mobile hamburger */}
         <button
           onClick={() => setOpen(!open)}
-          className="relative z-10 flex items-center justify-center text-white md:hidden p-1"
+          className="relative z-10 ml-auto flex items-center justify-center text-white md:hidden p-1"
           aria-label="Toggle menu"
         >
           <AnimatePresence mode="wait" initial={false}>
